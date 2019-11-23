@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was auto-generated from WSDL -->
+<!-- by the Apache Axis2 version: 1.7.9 Built on : Nov 16, 2018 (12:05:37 
+	GMT) -->
+<serviceGroup>
+	<service name="springUsuarioInit"
+		class="com.validar.SpringUsuarioInit">
+		<description>Este servicio inicializa el contexto de Spring
+		</description>
+		<parameter name="serviceTCCL">composite</parameter>
+		<parameter name="ServiceClass">com.validar.SpringUsuarioInit
+		</parameter>
+		<parameter name="load-on-startup">true</parameter>
+		<operation name="springInit">
+			<messageReceiver
+				class="org.apache.axis2.receivers.RawXMLINOutMessageReceiver" />
+		</operation>
+	</service>
+	<service name="validar">
+		<messageReceivers>
+			<messageReceiver
+				mep="http://www.w3.org/ns/wsdl/in-out"
+				class="com.validar.ValidarMessageReceiverInOut" />
+		</messageReceivers>
+		<parameter name="ServiceClass">com.validar.ValidarImpl</parameter>
+		<parameter name="ServiceObjectSupplier">
+			org.apache.axis2.extensions.spring.receivers.SpringAppContextAwareObjectSupplier
+		</parameter>
+		<parameter name="SpringBeanName">validarImpl</parameter>
+		<parameter name="SpringContextLocation">applicationContext.xml</parameter>
+		<parameter name="useOriginalwsdl">true</parameter>
+		<parameter name="modifyUserWSDLPortAddress">true</parameter>
+		<operation name="validarOperation"
+			mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://validar.com">
+			<actionMapping>http://validar.com/validar</actionMapping>
+			<outputActionMapping>http://validar.com/validarPortType/validarOperationResponse
+			</outputActionMapping>
+		</operation>
+	</service>
+</serviceGroup>

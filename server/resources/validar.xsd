@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://validar.com" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://validar.com">
+    <xs:element name="requestValidar">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="idHabitacion" type="xs:int"/>
+                <xs:element name="fecha" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="responseValidar">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ack">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="code" type="xs:string"/>
+                            <xs:element name="description" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
